@@ -10,7 +10,6 @@ class SpellChecker:
 
     def handleSentence(self, txtIn, language, modality):
         txtIn = replaceChars(txtIn.lower())
-
         words = txtIn.split()
         paroleErrate = " - "
 
@@ -56,9 +55,25 @@ class SpellChecker:
               "4. Exit\n" +
               "______________________________\n")
 
+    def iniziaRicerca(self, e):
+        '''In questo punto aggiungiamo:
+        1) I controlli: l'utente ha selezionato la lingua e la modalita? se no faglielo fare
+        2) Visto che siamo nel controllore richiamiamola funzione del modello per fare effettivamente
+           lo spellchecking
+        3) In entrambi i casi stampiamo a video i risultati'''
+        self._view.lvOut.clean()
+        testo = self._view._txtIn.value
+        self._view.lvOut.controls.append(ft.Text(f"La frase inserita è:", color="blue"))
+        self._view.lvOut.controls.append(ft.Text(f"{testo}", color="blue"))
+        self._view.update()
+
+
 
 def replaceChars(text):
     chars = "\\`*_{}[]()>#+-.!$?%^;,=_~"
     for c in chars:
         text = text.replace(c, "")
     return text
+
+
+

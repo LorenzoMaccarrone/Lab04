@@ -113,3 +113,4 @@ def dichotomicSearch(word, currentDic):
             end = mean
 
     return False
+

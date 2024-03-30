@@ -5,10 +5,12 @@ class Dictionary:
 
     def loadDictionary(self,path):
         file_path = path
-        with open(file_path, 'r') as file:
+        #aggiunto encoding utf-8 perchè altrimenti dava problemi...
+        with open(file_path, 'r',encoding="utf-8") as file:
             for line in file:
                 value = line.strip()
                 self._dict.append(value.lower())
+
 
     def printAll(self):
         for value in self._dict:
