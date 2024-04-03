@@ -42,18 +42,18 @@ class View(object):
 
         # Add your stuff here
         #row 1
-        self.__dd = ft.Dropdown(
+        self._dd = ft.Dropdown(
             label="Language",
             options=[
-                ft.dropdown.Option("Italian"),
-                ft.dropdown.Option("English"),
-                ft.dropdown.Option("Spanish"),
+                ft.dropdown.Option("italian"),
+                ft.dropdown.Option("english"),
+                ft.dropdown.Option("spanish"),
             ],
         )
-        row1=ft.Row([self.__dd], alignment=ft.MainAxisAlignment.CENTER)
+        row1=ft.Row([self._dd], alignment=ft.MainAxisAlignment.CENTER)
         self.page.controls.append(row1)
         #row2
-        self.__dd1 = ft.Dropdown(
+        self._dd1 = ft.Dropdown(
             label="Mode", width=100,
             options=[
                 ft.dropdown.Option("Default"),
@@ -64,7 +64,7 @@ class View(object):
 
         self._txtIn=ft.TextField(label="Insert your Text here")
         self.__btn=ft.ElevatedButton(text="start",on_click=self.__controller.iniziaRicerca)
-        row2 = ft.Row([self.__dd1, self._txtIn, self.__btn], alignment=ft.MainAxisAlignment.CENTER)
+        row2 = ft.Row([self._dd1, self._txtIn, self.__btn], alignment=ft.MainAxisAlignment.CENTER)
         self.page.controls.append(row2)
 
         #row3
